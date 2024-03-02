@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../components/context/CartContext'
+import { Link, Navigate } from 'react-router-dom'
 
 const Cart = () => {
     const {cart, cartTotal, emptyCart, removeItem} = useContext(CartContext)
-
-return(
+   
+  if(cart. length > 0)
+  return(
   <div>
     <h2>Tus productos:</h2>
     {
-        cart.lenght === 0 ?
-        <h3>Tu carrito esta vacio.</h3> :
+       
         <>
     
     {
@@ -20,18 +21,30 @@ return(
             <div>{item.price}</div>
             <div>{item.description}</div>
             <img src={item.img}/>
-            <div><button onClick={()=>removeItem(item.id)}>remover art.</button></div></div>
+            <div><button onClick={()=>removeItem(item.id)}>remover art.</button></div>
+
+    </div>
+        
         ))
     }
     </>
     }
 
     <h3>Tu total es: ${cartTotal()}</h3>
+    
+    
+    <div><button><Link to={`/checkout`}>Proceder a compra.</Link></button></div>
     <div><button onClick={()=>emptyCart()}>VACIAR CARRITO.</button></div>
+  
+  
   </div>
 )
     
-}
+else{
 
+return 'Tu carrito esta VACIO.'
+
+}}
+ 
 
 export {Cart}

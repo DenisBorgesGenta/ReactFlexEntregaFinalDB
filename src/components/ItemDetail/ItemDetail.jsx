@@ -7,17 +7,17 @@ import { Link } from 'react-router-dom'
 const ItemDetail = ({product}) => {
 
   const [counter, setCounter] = useState(1)
-  // const [addedProduct, setAddedProduct] = useState({})
-
 
   const {addToCart, cart, isInCart} = useContext(CartContext)
-  console.log(cart)
 
   const handleAdd = () =>{
     setCounter(counter+1)
+
   }
   const handleSubstract = () =>{
-    setCounter(counter-1)
+    if(counter > 1){
+      setCounter(counter-1)
+    }
   }
   const handleAddToCart = () =>{
     const newItem = {...product, cantidad: counter}
