@@ -53,4 +53,4 @@ const ItemDetail = ({product}) => {
 
 
 
-export default ItemDetail
+export {ItemDetail}

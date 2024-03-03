@@ -15,14 +15,16 @@ const Cart = () => {
     
     {
         cart.map((item) =>(
+    
     <div>
-            
+            <>
             <div>{item.name}</div>
             <div>{item.price}</div>
             <div>{item.description}</div>
             <img src={item.img}/>
+            <p>Cantidad: {item.cantidad}</p>
             <div><button onClick={()=>removeItem(item.id)}>remover art.</button></div>
-
+</>
     </div>
         
         ))

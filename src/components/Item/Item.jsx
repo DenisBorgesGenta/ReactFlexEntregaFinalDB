@@ -7,7 +7,9 @@ const Item = ({product}) => {
     <h2>{product.name}</h2>
     <p>{product.description}</p>
     <img src={product.img}></img>
+    <p>{product.stock}</p>
     <Link to={`/product/${product.id}`}>Detalles del producto.</Link>
+
     </div>
   )
 }

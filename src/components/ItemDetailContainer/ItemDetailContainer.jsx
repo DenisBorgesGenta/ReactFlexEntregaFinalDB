@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getProductsById } from '../../assets/asyncMock'
 import { useNavigate, useParams } from 'react-router-dom'
-import ItemDetail from '../ItemDetail/ItemDetail'
+import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../services/firebaseConfig';
 
